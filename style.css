@@ -51,14 +51,19 @@ img {
   max-height: 200px;
 }
 
-.header .container {
+.header .container,
+.header .left {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   direction: rtl;
 }
-.header .container h1 {
+.header .left {
+  direction: ltr;
+}
+.header .container h1,
+.header .left h1 {
   width: fit-content;
   font-size: 40px;
   -webkit-text-stroke-width: 1px;
@@ -66,10 +71,16 @@ img {
   -webkit-text-fill-color: white;
   position: relative;
 }
-.header .container h1:hover::before {
+.header .left h1 {
+  font-size: 30px;
+  white-space: nowrap;
+}
+.header .container h1:hover::before,
+.header .left h1:hover::before {
   width: 100%;
 }
-.header .container h1::before {
+.header .container h1::before,
+.header .left h1::before {
   width: 12%;
   white-space: nowrap;
   content: attr(data-name);
@@ -79,6 +90,9 @@ img {
   position: absolute;
   top: 0;
   right: 0;
+}
+.header .left h1::before {
+  left: 0;
 }
 .header .container p {
   width: fit-content;
@@ -136,11 +150,14 @@ img {
   justify-content: center;
   align-items: center;
 }
+#ch4 {
+  font-size: 16px;
+}
 .body .section:hover {
   color: white;
 }
 .body .section:hover span {
-  box-shadow: 0 0 0 300px #25501b;
+  box-shadow: 0 0 0 500px #25501b;
 }
 .body .section .text {
   text-align: center;
@@ -184,4 +201,20 @@ img {
 }
 .third {
   width: 100% !important;
+}
+.tranlate-cont {
+  position: fixed;
+  top: 20px;
+  right: 50px;
+}
+.tranlate-cont .box {
+  transition: .4s;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0px 10px;
+  background-color: #fafafa;
+}
+.tranlate-cont .box:hover {
+  color: white;
+  background-color: #333;
 }
